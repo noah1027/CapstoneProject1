@@ -1,0 +1,21 @@
+{% extends "capbase.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h1>List of entries in the weekly ESP sales database </h1>
+  <br>
+  <br>
+  <h6>Made an entry <a href="{{ url_for('delete_weekly_esp_sales_entry') }}">mistake</a>? Please have the index number of the mistake handy.</h6>
+  <br>
+  <h6>*Please check the <a href="{{ url_for('year_table') }}">Year</a> table and the <a href="{{ url_for('week_table') }}">Week</a> table for conversions</h6>
+  <h3>Entries into the weekly ESP sales database are as follows:</h3>
+    {% for record in ESPSalesList  %}
+    <p>------------------------------------------------------ </p>
+    <li>Index number: {{record.index}}</li>
+    <li>ESP code: {{record.esp_code}}</li>
+    <li>Sale team's lead employee ID: {{record.employee_id}}</li>
+    <li>Year number: {{record.year_id}}</li>
+    <li>Week number: {{record.week}}</li>
+    <li>Quantity of the ESP sold: {{record.quantity_espsold}}</li>
+{% endfor %}
+</div>
+{% endblock %}

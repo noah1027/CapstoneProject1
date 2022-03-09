@@ -1,0 +1,12 @@
+{% extends "capbase.html" %}
+{% block content %}
+<div class="jumbotron">
+    <h4>This form removes an entry from the weekly ESP sales entries in the database.</h4>
+    <form method="POST">
+         {{ form.hidden_tag() }}
+         {{ form.index.label }} {{ form.index() }} 
+         {{ form.confirmation.label }} {{ form.confirmation() }}
+         {{ form.submit() }}
+    </form>
+</div>
+{% endblock %}

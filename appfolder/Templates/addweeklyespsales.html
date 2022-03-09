@@ -1,0 +1,27 @@
+{% extends "capbase.html" %}
+{% block content %}
+<div class="jumbotron">
+  <h4>Greetings TractorTek Associate! This form allows entry of weekly ESP sales numbers.</h4>
+    <br>
+    <h4>Note: it is strongly advised to check and verify with the year and week tables below.</h4>
+    <h6>*Please check the <a href="{{ url_for('year_table') }}">Year</a> table and the <a href="{{ url_for('week_table') }}">Week</a> table for conversions</h6>
+    <br>
+    <br>
+
+  <form method="POST">
+      {{ form.hidden_tag() }}
+      {{ form.esp_code.label }}{{ form.esp_code }}
+     <br>
+      {{ form.employee_id.label }}{{ form.employee_id }}
+      <br>
+      {{ form.year_id.label }}{{ form.year_id }}
+      <br>
+      {{ form.week.label }}{{ form.week }}
+      <br>
+      {{ form.quantity_espsold.label }}{{ form.quantity_espsold }}
+      <br>
+      {{ form.submit() }}
+
+  </form>
+</div>
+{% endblock %}

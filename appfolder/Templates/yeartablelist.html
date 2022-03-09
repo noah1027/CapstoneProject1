@@ -1,0 +1,13 @@
+{% extends "capbase.html" %}
+{% block content %}
+<div class="jumbotron">
+  <br>
+  <br>
+    <h3>List of the corresponding year for the year IDs:</h3>
+    {% for record in YearConversionList  %}
+    <p>------------------------------------------------------ </p>
+    <li>Year ID: {{record.year_id}}</li>
+    <li>Year: {{record.year}}</li>
+{% endfor %}
+</div>
+{% endblock %}
